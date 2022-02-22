@@ -11,6 +11,15 @@
 
   <body>
     <p>
+      <% if @current_user %>
+        Welcome <%= @current_user.first_name %>
+      <% else %>
+        <a href="/sessions/new">Login</a>
+        <a href="/users/new">Sign up</a>
+      <% end %>
+    </p>
+
+    <p>
       <%= flash[:notice] %> <!--- another built-in hash --->
     </p>
 
